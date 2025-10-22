@@ -13,52 +13,61 @@ Ana Bot's primary purpose is to offer general support to international students,
 
 # 2. Project Structure
 ●	Frontend: Ana Bot's frontend is developed using TypeScript, HTML, and CSS. The interface has the highest concern for user accessibility, with a minimalistic and intuitive design for easy navigation and access to the chatbot functionality. The frontend components are well-organized to share consistent visual presentation and user interaction.
+
 ●	Backend: The backend was written entirely in TypeScript, with an emphasis on efficient data processing and robust communication between the AI modules and the user interface. This setup enables the system to process user interactions effectively, request data, and integrate seamlessly with AI functionality.
+
 ●	AI and Natural Language Processing (NLP): Google AI Studio was utilized as the primary development environment for adding AI-driven natural language processing capabilities using the Gemini API. The platform provided a good foundation to train the API to comprehend user queries and provide contextually accurate responses. By extensively training the Gemini API, Ana Bot could respond to different questions about Romania and Politehnica University of Bucharest (PUB) successfully. Personalized answers were meticulously 	crafted in such a way that Ana Bot can appropriately answer a huge number of student inquiries, making it a more credible virtual counselor.
+
 
 # 3. Implementation Details
 ●	Frontend Design: The frontend of Ana Bot is designed using HTML, CSS, and TypeScript to deliver a responsive and user-friendly interface. The structure of the frontend includes the following key components:
-o	HTML Structure:
-▪	The main HTML file (index.html) provides a structured layout with sections for the chat interface, message input, and a dynamic display area for event recommendations and other content.
-▪	The layout is minimalistic, with a focus on accessibility, ensuring easy navigation for users, particularly international students who may not be familiar with Romanian academic systems.
-o	CSS Styling:
-▪	The CSS is embedded directly within the HTML file, enabling streamlined styling without the need for external stylesheets. Key visual elements, such as buttons, input fields, and interactive icons, are styled using CSS classes defined within the <style> tag in the HTML document.
-▪	Visual assets such as anabot_logo.png, icon.png, and sendicon.png are strategically placed to enhance visual appeal and brand identity.
-o	TypeScript Integration:
-▪	TypeScript is used to handle dynamic data rendering, manage the flow of user interactions, and implement error handling mechanisms.
-▪	The frontend logic in script.ts includes event listeners to capture user inputs, validate commands, and send API requests to the backend for processing.
-▪	TypeScript's strong typing system ensures data consistency and reduces potential runtime errors, facilitating better debugging and maintenance.
-●	Backend Implementation: The backend of Ana Bot is constructed using TypeScript to leverage its scalability and robust data typing. The architecture includes the following components:
 
-o	 Server Setup:
-▪	The backend is structured around an Express server (backend.ts), which serves as the primary interface for client-server communication.
-▪	The server is configured to handle API requests, including user queries and event-related data retrieval.
-o	Data Processing:
-▪	Data is processed asynchronously using TypeScript's built-in async/await capabilities, ensuring that responses are delivered promptly without blocking the main execution thread.
-▪	Middleware such as body-parser and cors are integrated to handle JSON data parsing and manage cross-origin requests.
-o	Error Handling:
-▪	Comprehensive error handling mechanisms are implemented to catch and respond to unexpected errors, preventing server crashes and maintaining a consistent user experience.
-o	 Deployment Configuration:
-▪	The package.json file specifies the project dependencies, including libraries for AI integration (@google/genai, @google/generative-ai), server setup (express), and data parsing (body-parser).
-▪	The TypeScript configuration (tsconfig.json) is structured to compile TypeScript into JavaScript (dist/backend.js) with ES2020 as the target module, ensuring compatibility with modern browsers.
-●	AI Integration: Ana Bot's AI capabilities are powered by Google AI Studio, utilizing the Gemini API for advanced natural language processing. Key aspects of the AI integration include:
-o	Natural Language Processing (NLP):
-▪	For instance, if a user frequently inquires about student clubs, the AI will prioritize club-related event suggestions.
-▪	The model leverages context analysis and intent recognition to provide contextually relevant responses to user queries, ranging from campus navigation to event recommendations.
+	o	HTML Structure:
+		▪	The main HTML file (index.html) provides a structured layout with sections for the chat interface, message input, 			and a dynamic display area for event recommendations and other content.
+		▪	The layout is minimalistic, with a focus on accessibility, ensuring easy navigation for users, particularly 				international students who may not be familiar with Romanian academic systems.
+	o	CSS Styling:
+		▪	The CSS is embedded directly within the HTML file, enabling streamlined styling without the need for external 				stylesheets. Key visual elements, such as buttons, input fields, and interactive icons, are styled using CSS classes 			defined within the <style> tag in the HTML document.
+		▪	Visual assets such as anabot_logo.png, icon.png, and sendicon.png are strategically placed to enhance visual appeal 		and brand identity.
+	o	TypeScript Integration:
+		▪	TypeScript is used to handle dynamic data rendering, manage the flow of user interactions, and implement error 				handling mechanisms.
+		▪	The frontend logic in script.ts includes event listeners to capture user inputs, validate commands, and send API 			requests to the backend for processing.
+		▪	TypeScript's strong typing system ensures data consistency and reduces potential runtime errors, facilitating better 		debugging and maintenance.
+		●	Backend Implementation: The backend of Ana Bot is constructed using TypeScript to leverage its scalability and 				robust data typing. The architecture includes the following components:
 
-o	AI-Driven Personalization:
-	The AI component is designed to adapt its responses based on user interactions, offering more personalized recommendations over time.
-	For instance, if a user frequently inquires about student clubs, the AI will prioritize club-related event suggestions.
+	o	 Server Setup:
+		▪	The backend is structured around an Express server (backend.ts), which serves as the primary interface for client-			server 		communication.
+		▪	The server is configured to handle API requests, including user queries and event-related data retrieval.
+	o	Data Processing:
+		▪	Data is processed asynchronously using TypeScript's built-in async/await capabilities, ensuring that responses are 			delivered promptly without blocking the main execution thread.
+		▪	Middleware such as body-parser and cors are integrated to handle JSON data parsing and manage cross-origin requests.
+	o	Error Handling:
+		▪	Comprehensive error handling mechanisms are implemented to catch and respond to unexpected errors, preventing server crashes and maintaining a consistent user experience.
+	o	 Deployment Configuration:
+		▪	The package.json file specifies the project dependencies, including libraries for AI integration (@google/genai, @google/generative-ai), server setup (express), and data parsing (body-parser).
+		▪	The TypeScript configuration (tsconfig.json) is structured to compile TypeScript into JavaScript (dist/backend.js) with ES2020 as the target module, ensuring compatibility with modern browsers.
+		●	AI Integration: Ana Bot's AI capabilities are powered by Google AI Studio, utilizing the Gemini API for advanced natural language processing. Key aspects of the AI integration include:
+	o	Natural Language Processing (NLP):
+		▪	For instance, if a user frequently inquires about student clubs, the AI will prioritize club-related event suggestions.
+		▪	The model leverages context analysis and intent recognition to provide contextually relevant responses to user queries, ranging from campus navigation to event recommendations.
 
-o	Error Handling and Fallbacks:
-	AI interactions are structured to handle ambiguous or unclear inputs by prompting the user for clarification, ensuring more accurate responses.
+	o	AI-Driven Personalization:
+			The AI component is designed to adapt its responses based on user interactions, offering more personalized recommendations over time.
+			For instance, if a user frequently inquires about student clubs, the AI will prioritize club-related event suggestions.
+
+	o	Error Handling and Fallbacks:
+			AI interactions are structured to handle ambiguous or unclear inputs by prompting the user for clarification, ensuring more accurate responses.
 
 # 4. Key Features
 ●	University Protocol Assistance: Ana Bot provides detailed guidance on navigating university protocols, including enrollment procedures, course registration, and academic scheduling. It offers step-by-step instructions on how to complete administrative tasks such as applying for student ID cards, accessing online portals, and submitting required documentation. Additionally, it includes a directory of essential contacts within the university administration, allowing students to quickly connect with relevant departments for further assistance.
+
 ●	Local Services Information: Ana Bot compiles comprehensive information about essential services in Bucharest, such as healthcare facilities, public transportation, and accommodation options. It provides contact details for nearby hospitals and clinics, instructions on how to acquire transportation passes, and guidance on finding suitable housing within proximity to the university. Additionally, Ana Bot includes practical tips for adjusting to Romanian cultural norms and customs to help students feel more at ease in their new environment.
+
 ●	Social Integration Support: Ana Bot actively promotes social integration by providing general pieces of information about cultural activities or other activities which are student-oriented. 
+
 ●	Lost Document Support: In cases where students lose important documents such as visas, ID cards, or university permits, Ana Bot offers clear, actionable guidance on the necessary steps to resolve such issues. It provides contact information for relevant offices, templates for reporting lost items, and instructions on how to replace essential documents promptly. The feature is particularly beneficial for international students unfamiliar with Romanian administrative processes.
+
 ●	Campus Navigation Assistance: Ana Bot includes a specialized campus navigation module focused on the New Local Campus, where most academic faculties and lecture halls are situated. The module offers interactive maps, building descriptions, and direction indicators, allowing students to efficiently locate classrooms, administrative offices, and student service centers. This feature is especially useful for newcomers unfamiliar with the campus layout, helping them navigate effectively and reducing potential stress or confusion.
+
 ●	Campus Navigation: Ana Bot can assist international students on how to navigate to other Politehnica campuses such as Polizu or Leu. In the future, Ana Bot will be able to guide international students between the Polizu and Leu campuses to serve all foreign students regardless of faculty.
 
 # 5.  Future updates
